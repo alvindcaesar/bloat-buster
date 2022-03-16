@@ -26,15 +26,3 @@ function bbuster_setting_options()
   }
 }
 add_action('init', 'bbuster_setting_options');
-
-function mfwp_add_content($content) {
-  global $bbuster_options;
-
-  if (is_singular()) {
-    $extra_content = '<p class="twitter-message">Follow me on <a href="'. $bbuster_options['twitter_url']. '">Twitter</a></p>';
-    $content .= $extra_content;
-  }
-  return $content;
-}
-
-add_filter( 'the_content', 'mfwp_add_content' );
