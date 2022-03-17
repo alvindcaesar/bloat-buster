@@ -33,7 +33,6 @@ $bbuster_plugin_prefix = 'bbuster_';
 
 // Retrieve plugin settings from the database
 $bbuster_options = array(
-  get_option('bbuster_disable_auto_updates'),
   get_option('bbuster_disable_emoji'),
   get_option('bbuster_disable_fse_global_styles')
 );
@@ -43,8 +42,8 @@ require_once($bbuster_plugin_dir . 'includes/bbuster-display-functions.php');
 require_once($bbuster_plugin_dir . 'includes/bbuster-admin-page.php');
 
 // Link to settings page from plugins screen
-add_filter('plugin_action_links_' . $bbuster_plugin_file, 'add_action_links');
-function add_action_links($links)
+add_filter('plugin_action_links_' . $bbuster_plugin_file, 'bbuster_add_action_links');
+function bbuster_add_action_links($links)
 {
   $mylinks = array(
     '<a href="' . admin_url('options-general.php?page=bbuster-options') . '">Settings</a>',
