@@ -19,34 +19,20 @@
  */
 
 
-if (!defined('ABSPATH')) {
+if ( ! defined('ABSPATH') ) {
   exit;
 }
 
-// Global variables
-$bbuster_plugin_url = plugin_dir_url(__FILE__);
-$bbuster_plugin_dir = plugin_dir_path(__FILE__);
-$bbuster_plugin_file = plugin_basename(__FILE__);
-$bbuster_plugin_name = 'bloat-buster';
-$bbuster_plugin_version = '1.0.0';
-$bbuster_plugin_prefix = 'bbuster_';
+if ( file_exists( dirname( __FILE__ ). '/vendor/autoload.php')) {
+  require_once dirname( __FILE__ ). '/vendor/autoload.php';
+}
 
-// Retrieve plugin settings from the database
-$bbuster_options = array(
-  get_option('bbuster_disable_emoji'),
-  get_option('bbuster_disable_fse_global_styles')
-);
+define( 'PLUGIN_PATH', plugin_dir_path(__FILE__));
+define( 'PLUGIN_URL', plugin_dir_url(__FILE__));
+define( 'PLUGIN_FILE', plugin_basename(__FILE__));
+define( 'PLUGIN_NAME', 'bloat-buster');
+define( 'PLUGIN_VERSION', '1.0.0');
 
-// Load the plugin
-require_once($bbuster_plugin_dir . 'includes/bbuster-display-functions.php');
-require_once($bbuster_plugin_dir . 'includes/bbuster-admin-page.php');
-
-// Link to settings page from plugins screen
-add_filter('plugin_action_links_' . $bbuster_plugin_file, 'bbuster_add_action_links');
-function bbuster_add_action_links($links)
-{
-  $mylinks = array(
-    '<a href="' . admin_url('options-general.php?page=bbuster-options') . '">Settings</a>',
-  );
-  return array_merge($links, $mylinks);
+if ( class_exists( 'Includes\\Init')) {
+  Includes\Init::register_services();
 }
