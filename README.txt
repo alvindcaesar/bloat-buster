@@ -57,6 +57,6 @@ Development for this plugin happens in a public GitHub repository. If you have a
 * New: Added 7 new optimization features.
 * Improvement: Code base refactored.
 
-= 1.0.0 =
+= 1.0.0, March 17, 2022 =
 * Initial release
 
