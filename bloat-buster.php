@@ -23,16 +23,45 @@ if ( ! defined('ABSPATH') ) {
   exit;
 }
 
-if ( file_exists( dirname( __FILE__ ). '/vendor/autoload.php')) {
-  require_once dirname( __FILE__ ). '/vendor/autoload.php';
-}
+if( ! class_exists('Bloat_Buster'))
+{
+  class Bloat_Buster
+  {
+    private static $instance;
 
-define( 'PLUGIN_PATH', plugin_dir_path(__FILE__));
-define( 'PLUGIN_URL', plugin_dir_url(__FILE__));
-define( 'PLUGIN_FILE', plugin_basename(__FILE__));
-define( 'PLUGIN_NAME', 'bloat-buster');
-define( 'PLUGIN_VERSION', '1.0.0');
+    public static function instance()
+    {
+      if ( ! isset(self::$instance) && ! (self::$instance instanceof Bloat_Buster))
+      {
+        self::$instance = new Bloat_Buster();
+        self::$instance->define_constants();
+        self::$instance->includes();
+        self::$instance->init = new Bloat_Buster_Init();
+      }
+      return self::$instance;
+    }
 
-if ( class_exists( 'Includes\\Init')) {
-  Includes\Init::register_services();
+    private function define_constants()
+    {
+      define( 'PLUGIN_PATH', plugin_dir_path(__FILE__));
+      define( 'PLUGIN_URL',  plugin_dir_url(__FILE__));
+      define( 'PLUGIN_FILE', plugin_basename(__FILE__));
+      define( 'PLUGIN_NAME', 'bloat-buster');
+      define( 'PLUGIN_VERSION', '1.0.0');
+    }
+
+    private function includes()
+    {
+      foreach ( glob( PLUGIN_PATH . "includes/*.php") as $class )
+      {
+        require_once $class;
+      }
+    }
+  }
+
+  function Bloat_Buster_Run()
+  {
+    return Bloat_Buster::instance();
+  }
+  Bloat_Buster_Run();
 }
