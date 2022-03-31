@@ -9,7 +9,7 @@
  * Plugin Name:       Bloat Buster
  * Plugin URI:        https://github.com/alvindcaesar/bloat-buster
  * Description:       A super simple plugin to remove bloat from your WordPress site.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Alvind Caesar
  * Author URI:        https://alvindcaesar.com
  * License:           GPL-2.0+
