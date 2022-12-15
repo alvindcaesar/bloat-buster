@@ -6,7 +6,7 @@ Tags: remove bloat, clean up, disable, performance tweak
 Requires at least: 5.5
 Tested up to: 6.1.1
 Requires PHP: 5.5
-Stable tag: 1.1.2
+Stable tag: 1.1.2.1
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ Development for this plugin happens in a public GitHub repository. If you have a
 1. Setting page overview
 
 == Changelog ==
+
+= 1.1.2.1, December 15, 2022 =
+* Compatibility with WordPress 6.1.
 
 = 1.1.2, June 10, 2022 =
 * Compatibility with WordPress 6.0.
