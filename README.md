@@ -1,6 +1,6 @@
 <p>
   <a href="https://wordpress.org/plugins/bloat-buster" target="_blank">
-    <img src="./.github/banner-772x250.png" alt="Bloat Buster" width="772" height="250">
+    <img src="./.wordpress-org/banner-772x250.png" alt="Bloat Buster" width="772" height="250">
   </a>
   
 </p>
