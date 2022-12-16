@@ -12,14 +12,25 @@
     }
 
     public function register_setting() {
-      register_setting('bloat_buster', '_bbuster_disable_emoji');
-      register_setting('bloat_buster', '_bbuster_disable_fse_global_styles');
-      register_setting('bloat_buster', '_bbuster_remove_rsd_link');
-      register_setting('bloat_buster', '_bbuster_remove_shortlink');
-      register_setting('bloat_buster', '_bbuster_disable_embed');
-      register_setting('bloat_buster', '_bbuster_disable_xmlrpc');
-      register_setting('bloat_buster', '_bbuster_hide_wp_version');
-      register_setting('bloat_buster', '_bbuster_disable_heartbeat');
-      register_setting('bloat_buster', '_bbuster_dequeue_dashicon');
+
+      $settings = $this->settings();
+
+      foreach ($settings as $setting) {
+        register_setting('bloat_buster', '_bbuster_'. $setting );
+      }
+    }
+
+    public function settings() {
+      return array(
+        'disable_emoji',
+        'disable_fse_global_styles',
+        'remove_rsd_link',
+        'remove_shortlink',
+        'disable_embed',
+        'disable_xmlrpc',
+        'hide_wp_version',
+        'disable_heartbeat',
+        'dequeue_dashicon'
+      );
     }
  }
