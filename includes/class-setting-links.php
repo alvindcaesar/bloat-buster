@@ -8,7 +8,7 @@
  class Settings_Links
  {
     public function __construct() {
-      add_filter('plugin_action_links_' . PLUGIN_FILE, array( $this, 'add_settings_links' ));
+      add_filter('plugin_action_links_' . BBUSTER_FILE, array( $this, 'add_settings_links' ));
     }
 
     public function add_settings_links( $links ) {
