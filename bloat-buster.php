@@ -43,25 +43,21 @@ if( ! class_exists('Bloat_Buster'))
 
     private function define_constants()
     {
-      define( 'PLUGIN_PATH', plugin_dir_path(__FILE__));
-      define( 'PLUGIN_URL',  plugin_dir_url(__FILE__));
-      define( 'PLUGIN_FILE', plugin_basename(__FILE__));
-      define( 'PLUGIN_NAME', 'bloat-buster');
-      define( 'PLUGIN_VERSION', '1.0.0');
+      define( 'BBUSTER_PATH', plugin_dir_path(__FILE__));
+      define( 'BBUSTER_URL',  plugin_dir_url(__FILE__));
+      define( 'BBUSTER_FILE', plugin_basename(__FILE__));
+      define( 'BBUSTER_NAME', 'bloat-buster');
+      define( 'BBUSTER_VERSION', '1.1.2.1');
     }
 
     private function includes()
     {
-      foreach ( glob( PLUGIN_PATH . "includes/*.php") as $class )
+      foreach ( glob( BBUSTER_PATH . "includes/*.php") as $class )
       {
         require_once $class;
       }
     }
   }
-
-  function Bloat_Buster_Run()
-  {
-    return Bloat_Buster::instance();
-  }
-  Bloat_Buster_Run();
+  
+  add_action( 'plugins_loaded', array( 'Bloat_Buster', 'instance') );
 }
