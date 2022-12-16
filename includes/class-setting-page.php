@@ -20,6 +20,6 @@
     }
 
     public function options_page() {
-      require_once PLUGIN_PATH . 'includes/partials/setting.php';
+      require_once BBUSTER_PATH . 'includes/partials/setting.php';
     }
  }
