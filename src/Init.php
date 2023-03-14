@@ -18,9 +18,9 @@
    {
      return array(
        Pages\Admin::class,
-       Pages\Settings\Register::class,
+       Pages\Settings\Links::class,
        Pages\Settings\Options::class,
-       Pages\Settings\Links::class
+       Pages\Settings\Register::class,
      );
    }
  
