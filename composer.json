@@ -1,0 +1,13 @@
+{
+    "name": "alvindcaesar/bloatbuster",
+    "description": "A super simple plugin to remove bloat from your WordPress site.",
+    "type": "wordpress-plugin",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Bloatbuster\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
