@@ -19,6 +19,8 @@
      return array(
        Pages\Admin::class,
        Pages\Settings\Links::class,
+       Pages\Settings\Export::class,
+       Pages\Settings\Import::class,
        Pages\Settings\Options::class,
        Pages\Settings\Register::class,
      );
