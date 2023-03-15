@@ -30,7 +30,7 @@
     */
    public function options_page() 
    {
-     require_once BBUSTER_PATH . 'includes/partials/option-page.php';
+     require_once BBUSTER_PATH . 'includes/partials/layout.php';
    }
  }
  
