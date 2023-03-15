@@ -1,4 +1,5 @@
 <?php
+
 namespace Bloatbuster\Pages\Settings;
 
 class Register
@@ -10,14 +11,14 @@ class Register
 
   public function register_setting() 
   {
-    $settings = $this->settings();
+    $settings = self::settings_name();
 
     foreach ($settings as $setting) {
       register_setting('bloat_buster', '_bbuster_'. $setting );
     }
   }
 
-  public function settings() 
+  public static function settings_name() 
   {
     return array(
       'disable_emoji',
