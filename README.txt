@@ -53,6 +53,10 @@ Development for this plugin happens in a public GitHub repository. If you have a
 
 == Changelog ==
 
+= 1.2, March 15, 2023 =
+* Improvement: Code base refactoring
+* New: Added Export and Import Settings
+
 = 1.1.2.1, December 15, 2022 =
 * Compatibility with WordPress 6.1.
 
