@@ -32,18 +32,8 @@ function bbuster_uninstall() {
 	 * @see https://developer.wordpress.org/plugins/plugin-basics/uninstall-methods/#method-2-uninstall-php
 	 */
 
-	 $options = array(
-		'disable_emoji',
-		'disable_fse_global_styles',
-		'remove_rsd_link',
-		'remove_shortlink',
-		'disable_embed',
-		'disable_xmlrpc',
-		'hide_wp_version',
-		'disable_heartbeat',
-		'dequeue_dashicon'
-	);
-
+	$options = \Bloatbuster\Pages\Settings\Register::settings_name();
+	
 	foreach ( $options as $option ) {
 		delete_option('_bbuster_' . $option );
 	}
