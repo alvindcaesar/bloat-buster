@@ -4,9 +4,9 @@ Author URI: https://alvindcaesar.com
 Plugin URI: https://github.com/alvindcaesar/bloat-buster
 Tags: remove bloat, clean up, disable, performance tweak
 Requires at least: 5.5
-Tested up to: 6.1.1
+Tested up to: 6.4.2
 Requires PHP: 7.0
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,12 @@ Development for this plugin happens in a public GitHub repository. If you have a
 1. Setting page overview
 
 == Changelog ==
+
+= 1.2.1, January 6, 2024 =
+* Compatibility with WordPress 6.4.2.
+* Increased overall robustness of the import setting functionality.
+* Improved the exported file naming convention by incorporating a timestamp to make each export unique and easily identifiable.
+* Implemented comprehensive file handling and validation for the import setting process, including checks for file type, size limitations, and JSON content validation.
 
 = 1.2, March 15, 2023 =
 * Improvement: Code base refactoring
