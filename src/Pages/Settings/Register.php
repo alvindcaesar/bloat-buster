@@ -18,7 +18,7 @@ class Register
     }
   }
 
-  public static function settings_name() 
+  public static function settings_name() : array
   {
     return array(
       'disable_emoji',
