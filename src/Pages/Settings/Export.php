@@ -21,7 +21,9 @@ class Export
 
     $json_data = json_encode($settings); // Encode the settings as JSON
 
-    header('Content-disposition: attachment; filename=bloatbuster_settings_export.json'); // Set the filename for the downloaded file
+    $filename = 'bloatbuster_settings_' . time() . '.json';
+    
+    header("Content-disposition: attachment; filename={$filename}"); // Set the filename for the downloaded file
 
     header('Content-Type: application/json'); // Set the content type to JSON
 
